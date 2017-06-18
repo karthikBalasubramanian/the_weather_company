@@ -56,6 +56,12 @@ There are two source folders
 
 [ECL Emma](http://www.eclemma.org/jacoco/) is the code coverage tool that is used to get code coverage reports. Use [installation  instructions](http://www.eclemma.org/installation.html#marketplace) to download this eclipse plug-in.
 
+After installing the plug-in
+
+`Right click project -> Coverage As -> JUnit Test`
+
+set your download location with folder named **coverage**.
+
 
 got to **coverage** folder and click **index.html** and navigate  via hyper links to check code coverage of specific classes.
 
