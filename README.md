@@ -1,9 +1,10 @@
 # The Weather Company
-This repository has two folders
+This repository has four folders
 
   1. codingtest (Contains the problem sets)
   2. coverage (Results of code coverage as Html files)
-
+  3. Javadocs (Documentation of classes and their methods).
+  4. outputs (screen shots of some of the outputs).
 ### Prerequisites:
 ------------------
   Install maven
@@ -49,7 +50,6 @@ There are two source folders
   you should get a build output like this for a successful build.
 
   ![build1](./outputs/mvn_build1.png "build_part_1")
-  ![build2](./outputs/mvn_build2.png "build_part_2")
 
 ### Coverage
 ------------------
@@ -66,3 +66,10 @@ set your download location with folder named **coverage**.
 got to **coverage** folder and click **index.html** and navigate  via hyper links to check code coverage of specific classes.
 
 !["code coverage"](./outputs/code_coverage.png "cover coverage")
+
+### Javadocs
+--------------
+
+ Generated javadocs can be found in the **javadocs** folder. Open **index.html** to navigate through all the classes and their documentation. Your javadocs should be like this.
+
+ !["javadocs"](./outputs/JavaDocs.png "javadocs")

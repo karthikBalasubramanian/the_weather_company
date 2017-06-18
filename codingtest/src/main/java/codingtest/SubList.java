@@ -64,7 +64,8 @@ public class SubList {
 	
 	
 	/**
-	 * This is a helper method for isSubList()
+	 * This Method compares two list of Integers and returns if either of the list is a sublist
+	 * of the other.
 	 *
 	 * @param listOne, ArrayList of Integer, is the first list passed.
 	 * @param listTwo, ArrayList of Integer, is the second list passed.
