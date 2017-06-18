@@ -67,8 +67,8 @@ public class SubList {
 	 * This Method compares two list of Integers and returns if either of the list is a sublist
 	 * of the other.
 	 *
-	 * @param listOne, ArrayList of Integer, is the first list passed.
-	 * @param listTwo, ArrayList of Integer, is the second list passed.
+	 * @param listOne, ArrayList of Integer, a.k.a - listOne is the first list passed.
+	 * @param listTwo, ArrayList of Integer, a.k.a - listTwo is the second list passed.
 	 * @return String, result that conveys whether either of the list can be a sublist of another. 
 	 */
 
