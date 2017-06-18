@@ -14,13 +14,22 @@ public class LinkedListTest {
 
 	@Test
 	public void testPrintFifthElementFromEnd() {
-		listObject.enterValuesIntoLinkedList(-1);
-		assertEquals("Sorry, LinkedList is yet to be populated", listObject.printFifthElementFromEnd(listObject.getHead()));
-		listObject.enterValuesIntoLinkedList(3);
-		assertEquals("Sorry, LinkedList has less than 5 elements", listObject.printFifthElementFromEnd(listObject.getHead()));
-		listObject.enterValuesIntoLinkedList(5);
+		
+		assertEquals("LinkedList is empty", listObject.printFifthElementFromEnd(null));
+		
+		listObject.createLinkedListOfSize(-1);
+		assertEquals("LinkedList is empty", listObject.printFifthElementFromEnd(listObject.getHead()));
+		
+		listObject.createLinkedListOfSize(3);
+		assertEquals("LinkedList has only " + 3+" elements", listObject.printFifthElementFromEnd(listObject.getHead()));
+		
+		listObject.createLinkedListOfSize(5);
 		assertEquals("Fifth element from the end is "+1, listObject.printFifthElementFromEnd(listObject.getHead()));
 		assertNotEquals("Fifth element from the end is "+0, listObject.printFifthElementFromEnd(listObject.getHead()));
+		
+		listObject.createLinkedListOfSize(6);
+		assertEquals("Fifth element from the end is "+2, listObject.printFifthElementFromEnd(listObject.getHead()));
+		
 		
 	}
 

@@ -2,43 +2,58 @@ package codingtest;
 
 import static org.junit.Assert.*;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class SubListTest {
+
 	private SubList subListCheck = null;
 	@Before
 	public void setUp() throws Exception {
-		subListCheck  = new SubList();
-	}
-
-	@Test
-	public void testGetCountMap() {
-		assertNull(subListCheck.getCountMap(null));
-		assertNull(subListCheck.getCountMap(new int[0]));
-		int[] array = {1,1,2,3,1};
-		HashSet<Integer> uniqueNummbers = new HashSet<Integer>();
-		for(int value: array){uniqueNummbers.add(value);}
-		assertEquals(uniqueNummbers.size(), subListCheck.getCountMap(array).size());
+	  subListCheck = new SubList();
 	}
 
 	@Test
 	public void testIsSubList() {
-		// first argument is an array to check for sublist
-		// second argument is the longer array which is searched for sublist array elements.
-		assertEquals("Sorry either of the list is empty",subListCheck.isSubList(null, null) );
-		assertEquals("Sorry either of the list is empty",subListCheck.isSubList(null, new int[2]) );
-		assertEquals("Sorry either of the list is empty",subListCheck.isSubList(new int[2], null) );
-		assertEquals("Sorry either of the list is empty",subListCheck.isSubList(new int[0], new int[2]) );
-		assertEquals("Sorry either of the list is empty",subListCheck.isSubList(new int[2], new int[0]) );
-		assertNotEquals("Sorry either of the list is empty",subListCheck.isSubList(new int[2], new int[1]) );
-		assertEquals("Sorry, original array is smaller than the sublist array. So the array cannot be a sublist",subListCheck.isSubList(new int[4], new int[2]) );
-		assertEquals("element "+1+" is either not present or has less number of occurences in original array",subListCheck.isSubList(new int[] {1,1,1}, new int[]{1,1,2}));
-		assertEquals("element "+5+" is either not present or has less number of occurences in original array",subListCheck.isSubList(new int[] {1,5,3}, new int[]{1,1,2}));
-		assertEquals("The given array is indeed a subset of the existing array",subListCheck.isSubList(new int[] {1,1}, new int[]{1,1,2}));
-		assertEquals("The given array is indeed a subset of the existing array",subListCheck.isSubList(new int[] {1,2,4}, new int[]{1,1,2,3,4,4,4}));
+		
+		assertEquals("Both lists are empty", subListCheck.isSubList(null, null));
+		assertEquals("Both lists are empty", subListCheck.isSubList(null, new ArrayList<Integer>()));
+		assertEquals("Both lists are empty", subListCheck.isSubList(new ArrayList<Integer>(),null));
+		
+		
+		assertEquals("listOne is a sublist of listTwo", subListCheck.isSubList(null, new ArrayList<Integer>(Arrays.asList(1,2,3))));
+		assertEquals("listOne is a sublist of listTwo", subListCheck.isSubList(new ArrayList<Integer>(), new ArrayList<Integer>(Arrays.asList(1,2,3))));
+		
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),null));
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>()));
+		
+		
+		assertEquals("listOne is a sublist of listTwo", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2)),new ArrayList<Integer>(Arrays.asList(1,2,3))));
+		assertEquals("listOne is a sublist of listTwo", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,2,6,6)), new ArrayList<Integer>(Arrays.asList(1,2,2,3,5,6,6,7))));
+	
+		
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>(Arrays.asList(1,2))));
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,2,3,5,6,6,7)),new ArrayList<Integer>(Arrays.asList(1,2,2,6,6))));
+	
+	
+		assertEquals("listOne element 2 not present in listTwo whose size is >= listOne. Therefore listOne is not a sublist of listTwo"
+, subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>(Arrays.asList(1,4,5,6))));
+		
+		assertEquals("listOne element 1 not present in listTwo whose size is >= listOne. Therefore listOne is not a sublist of listTwo"
+				, subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,1,3)),new ArrayList<Integer>(Arrays.asList(1,4,5,6))));
+						
+		
+		assertEquals("listTwo element 0 not present in listOne whose size is >= listTwo. Therefore listTwo is not a sublist of listOne"
+				, subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5)),new ArrayList<Integer>(Arrays.asList(0,1))));
+		
+		assertEquals("listTwo element 4 not present in listOne whose size is >= listTwo. Therefore listTwo is not a sublist of listOne"
+				, subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>(Arrays.asList(4,5,6))));
+		
+		
+		
 	}
 
 }

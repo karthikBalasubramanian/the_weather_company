@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LinkedListTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">codingtest (1) (Jun 17, 2017 8:51:12 PM)</a> &gt; <a href="../../index.html" class="el_group">codingtest</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">codingtest</a> &gt; <span class="el_source">LinkedListTest.java</span></div><h1>LinkedListTest.java</h1><pre class="source lang-java linenums">package codingtest;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LinkedListTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">codingtest (1) (Jun 18, 2017 6:45:52 PM)</a> &gt; <a href="../../index.html" class="el_group">codingtest</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">codingtest</a> &gt; <span class="el_source">LinkedListTest.java</span></div><h1>LinkedListTest.java</h1><pre class="source lang-java linenums">package codingtest;
 
 import static org.junit.Assert.*;
 
@@ -14,15 +14,24 @@ import org.junit.Test;
 
 	@Test
 	public void testPrintFifthElementFromEnd() {
-<span class="fc" id="L17">		listObject.enterValuesIntoLinkedList(-1);</span>
-<span class="fc" id="L18">		assertEquals(&quot;Sorry, LinkedList is yet to be populated&quot;, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
-<span class="fc" id="L19">		listObject.enterValuesIntoLinkedList(3);</span>
-<span class="fc" id="L20">		assertEquals(&quot;Sorry, LinkedList has less than 5 elements&quot;, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
-<span class="fc" id="L21">		listObject.enterValuesIntoLinkedList(5);</span>
-<span class="fc" id="L22">		assertEquals(&quot;Fifth element from the end is &quot;+1, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
-<span class="fc" id="L23">		assertNotEquals(&quot;Fifth element from the end is &quot;+0, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
 		
-<span class="fc" id="L25">	}</span>
+<span class="fc" id="L18">		assertEquals(&quot;LinkedList is empty&quot;, listObject.printFifthElementFromEnd(null));</span>
+		
+<span class="fc" id="L20">		listObject.createLinkedListOfSize(-1);</span>
+<span class="fc" id="L21">		assertEquals(&quot;LinkedList is empty&quot;, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
+		
+<span class="fc" id="L23">		listObject.createLinkedListOfSize(3);</span>
+<span class="fc" id="L24">		assertEquals(&quot;LinkedList has only &quot; + 3+&quot; elements&quot;, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
+		
+<span class="fc" id="L26">		listObject.createLinkedListOfSize(5);</span>
+<span class="fc" id="L27">		assertEquals(&quot;Fifth element from the end is &quot;+1, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
+<span class="fc" id="L28">		assertNotEquals(&quot;Fifth element from the end is &quot;+0, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
+		
+<span class="fc" id="L30">		listObject.createLinkedListOfSize(6);</span>
+<span class="fc" id="L31">		assertEquals(&quot;Fifth element from the end is &quot;+2, listObject.printFifthElementFromEnd(listObject.getHead()));</span>
+		
+		
+<span class="fc" id="L34">	}</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>codingtest (1) (Jun 17, 2017 8:51:12 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>codingtest (1) (Jun 18, 2017 6:45:52 PM)</div></body></html>

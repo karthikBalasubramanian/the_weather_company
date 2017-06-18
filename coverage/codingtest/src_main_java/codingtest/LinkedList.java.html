@@ -1,51 +1,99 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LinkedList.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">codingtest (1) (Jun 17, 2017 8:51:12 PM)</a> &gt; <a href="../../index.html" class="el_group">codingtest</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">codingtest</a> &gt; <span class="el_source">LinkedList.java</span></div><h1>LinkedList.java</h1><pre class="source lang-java linenums">package codingtest;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>LinkedList.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">codingtest (1) (Jun 18, 2017 6:45:52 PM)</a> &gt; <a href="../../index.html" class="el_group">codingtest</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">codingtest</a> &gt; <span class="el_source">LinkedList.java</span></div><h1>LinkedList.java</h1><pre class="source lang-java linenums">package codingtest;
 
-<span class="fc" id="L3">public class LinkedList {</span>
-	
-<span class="fc" id="L5">	private Node head = null;</span>
-	
+/**
+ * LinkedList.java
+ * Purpose: To create a LinkedList of inner class Node and return the 5th element from the end of LinkedList 
+ *
+ * @author Karthik Balasubramanian
+ * @version 1.0 06/18/17
+ */
+
+<span class="fc" id="L11">public class LinkedList {</span>
+
+<span class="fc" id="L13">	private Node head = null;</span>
+	/**
+	 * This is a getter method to access private class member head.
+	 * 
+	 * @return head of type Node - head of the LinkedList
+	 */
 	public Node getHead() {
-<span class="fc" id="L8">		return this.head;</span>
+<span class="fc" id="L20">		return this.head;</span>
 	}
-	public void enterValuesIntoLinkedList(int numbersToAdd){
-<span class="fc" id="L11">		this.head = null;</span>
-<span class="fc bfc" id="L12" title="All 2 branches covered.">		for(int i=numbersToAdd; i&gt;=0; i--){</span>
-<span class="fc" id="L13">			addToLinkedList(i);</span>
-		}
-<span class="fc" id="L15">	}</span>
-	public void addToLinkedList(int data){
-<span class="fc" id="L17">		Node current = new Node(data);</span>
-<span class="fc" id="L18">		current.next= this.head;</span>
-<span class="fc" id="L19">		head= current;</span>
-<span class="fc" id="L20">	}</span>
 	
-	public String printFifthElementFromEnd(Node head){
-		
-<span class="fc" id="L24">		Node slowPointer = head;</span>
-<span class="fc" id="L25">		Node fastPointer = head;</span>
-		
-<span class="fc" id="L27">		int stepsToMove = 0;</span>
-		
-<span class="fc bfc" id="L29" title="All 2 branches covered.">		if(fastPointer!=null){</span>
-<span class="fc bfc" id="L30" title="All 2 branches covered.">			while(stepsToMove&lt;5){</span>
-<span class="fc bfc" id="L31" title="All 2 branches covered.">				if(fastPointer==null){</span>
-<span class="fc" id="L32">					return &quot;Sorry, LinkedList has less than 5 elements&quot;;</span>
-				}
-<span class="fc" id="L34">				fastPointer = fastPointer.next;</span>
-<span class="fc" id="L35">				stepsToMove+=1;</span>
-			}
-<span class="fc bfc" id="L37" title="All 2 branches covered.">			while(fastPointer!=null){</span>
-<span class="fc" id="L38">				slowPointer = slowPointer.next;</span>
-<span class="fc" id="L39">				fastPointer = fastPointer.next;</span>
-			}
-			
-<span class="fc" id="L42">			return &quot;Fifth element from the end is &quot;+slowPointer.value;</span>
-			
-			
-		}else{
-<span class="fc" id="L46">			return &quot;Sorry, LinkedList is yet to be populated&quot;;</span>
+	/**
+	 * This method is used to create a LinkedList size, provided by the parameter.
+	 * 
+	 * @param numbersToAdd - Integer - Size of the LinkedList.
+	 */
+
+	void createLinkedListOfSize(int numbersToAdd) {
+<span class="fc" id="L30">		this.head = null;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">		for (int i = numbersToAdd; i &gt; 0; i--) {</span>
+<span class="fc" id="L32">			Node current = new Node(i);</span>
+<span class="fc" id="L33">			current.next = this.head;</span>
+<span class="fc" id="L34">			head = current;</span>
 		}
-		
+<span class="fc" id="L36">	}</span>
+	
+	/**
+	 * This method is used to print the fifth element from the end of the LinkedList if the element exists.
+	 * 
+	 * @param head Node - head of the LinkedList 
+	 * @return result, String - Fifth element from the end of the list if it exists, else explain the reason.
+	 */
+
+	public String printFifthElementFromEnd(Node head) {
+
+<span class="fc" id="L47">		Node firstPointer = head;</span>
+<span class="fc" id="L48">		Node secondPointer = head;</span>
+
+<span class="fc" id="L50">		int stepsToMove = 0;</span>
+
+<span class="fc bfc" id="L52" title="All 2 branches covered.">		if (firstPointer != null) {</span>
+			
+<span class="fc bfc" id="L54" title="All 2 branches covered.">			while (stepsToMove &lt; 5) {</span>
+				
+<span class="fc bfc" id="L56" title="All 2 branches covered.">				if (firstPointer == null) {</span>
+<span class="fc" id="L57">					return &quot;LinkedList has only &quot; + stepsToMove + &quot; elements&quot;;</span>
+				}
+				
+<span class="fc" id="L60">				firstPointer = firstPointer.next;</span>
+<span class="fc" id="L61">				stepsToMove += 1;</span>
+			}
+<span class="fc bfc" id="L63" title="All 2 branches covered.">			while (firstPointer != null) {</span>
+				
+<span class="fc" id="L65">				secondPointer = secondPointer.next;</span>
+<span class="fc" id="L66">				firstPointer = firstPointer.next;</span>
+			
+			}
+
+<span class="fc" id="L70">			return &quot;Fifth element from the end is &quot; + secondPointer.value;</span>
+
+		} else {
+			
+<span class="fc" id="L74">			return &quot;LinkedList is empty&quot;;</span>
+		}
+
 	}
+	
+	
+	public class Node {
+
+		int value;
+		Node next;
+		
+		/**
+		 * Constructor to create a Node in the List with value and next pointer.
+		 * 
+		 * @param value, Integer.
+		 */
+
+<span class="fc" id="L91">		Node(int value) {</span>
+<span class="fc" id="L92">			this.value = value;</span>
+<span class="fc" id="L93">			this.next = null;</span>
+<span class="fc" id="L94">		}</span>
+
+	}
+
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>codingtest (1) (Jun 17, 2017 8:51:12 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>codingtest (1) (Jun 18, 2017 6:45:52 PM)</div></body></html>
