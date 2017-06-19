@@ -5,12 +5,22 @@ This repository has four folders
   2. coverage (Results of code coverage as Html files)
   3. Javadocs (Documentation of classes and their methods).
   4. outputs (screen shots of some of the outputs).
+
+### Assumptions
+--------------------
+
+1. CheckTriangle.class - Inputs (sides of the triangle) are of type Double/double.
+
+2. LinkedList.class - My LinkedList implementation is a List of Integers with a next pointers going in forward direction. So if asked to return the 5th element from the back of the list, the program would return fifth Integer from the back, if it exists.
+
+3. SubList.class -  Takes two ArrayList<?> (any type) and compares if either of the list is a sublist of another. It cannot compare two lists of different types (This condition is captured in the code. Program will not fail in any case). Tested for all primitive types (Integer,Double,String).
+
 ### Prerequisites:
 ------------------
   Install maven
   `sudo apt install maven`
 
-   After you install check for maven version and machine specs. Here is my system specs. The program should run seamlessly if the user has similar specs as mine
+   After you install check for maven version and machine specs.
 
   `mvn --version`
 
@@ -29,7 +39,7 @@ This repository has four folders
 
   `git clone https://github.com/karthikBalasubramanian/the_weather_company.git`
 
-  As you download from your command prompt, you will see a new folder called "the_weather_company" under your present working directory.
+  As you download from your command prompt, you will see a new folder called **the_weather_company** under your present working directory.
 
 ### Package Structure
 -------------------------

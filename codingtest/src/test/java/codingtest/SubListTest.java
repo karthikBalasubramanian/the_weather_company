@@ -19,6 +19,7 @@ public class SubListTest {
 	@Test
 	public void testIsSubList() {
 		
+		
 		assertEquals("Both lists are empty", subListCheck.isSubList(null, null));
 		assertEquals("Both lists are empty", subListCheck.isSubList(null, new ArrayList<Integer>()));
 		assertEquals("Both lists are empty", subListCheck.isSubList(new ArrayList<Integer>(),null));
@@ -30,6 +31,8 @@ public class SubListTest {
 		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),null));
 		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>()));
 		
+		assertEquals("Cannot compare two lists of different types.", subListCheck.isSubList(new ArrayList<String>(Arrays.asList("Karthik","Ankit","Elias")), new ArrayList<Integer>(Arrays.asList(1,2,3))));
+		assertEquals("Cannot compare two lists of different types.", subListCheck.isSubList(new ArrayList<String>(Arrays.asList("Karthik","Ankit","Elias")), new ArrayList<Double>(Arrays.asList(1.0,2.0,3.0))));
 		
 		assertEquals("listOne is a sublist of listTwo", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2)),new ArrayList<Integer>(Arrays.asList(1,2,3))));
 		assertEquals("listOne is a sublist of listTwo", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,2,6,6)), new ArrayList<Integer>(Arrays.asList(1,2,2,3,5,6,6,7))));

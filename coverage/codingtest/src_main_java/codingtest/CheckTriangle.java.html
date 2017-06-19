@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CheckTriangle.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">codingtest (1) (Jun 18, 2017 6:45:52 PM)</a> &gt; <a href="../../index.html" class="el_group">codingtest</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">codingtest</a> &gt; <span class="el_source">CheckTriangle.java</span></div><h1>CheckTriangle.java</h1><pre class="source lang-java linenums">package codingtest;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CheckTriangle.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">codingtest (1) (Jun 18, 2017 9:36:21 PM)</a> &gt; <a href="../../index.html" class="el_group">codingtest</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">codingtest</a> &gt; <span class="el_source">CheckTriangle.java</span></div><h1>CheckTriangle.java</h1><pre class="source lang-java linenums">package codingtest;
 
 /**
  * CheckTriangle.java
@@ -19,7 +19,7 @@
 	 * @return true if they are valid lengths. Otherwise False
 	 */
 
-	private boolean validLength(int sideA, int sideB, int sideC) {
+	private boolean validLength(double sideA, double sideB, double sideC) {
 <span class="fc bfc" id="L23" title="All 6 branches covered.">		return sideA &gt; 0 &amp;&amp; sideB &gt; 0 &amp;&amp; sideC &gt; 0;</span>
 	}
 
@@ -31,7 +31,7 @@
 	 * @param sideC length of sideC in a triangle
 	 * @return true if the lengths does not adhere to triangle property. Otherwise return false.
 	 */
-	private boolean checkTraingleProperty(int sideA, int sideB, int sideC) {
+	private boolean checkTraingleProperty(double sideA, double sideB, double sideC) {
 <span class="fc bfc" id="L35" title="All 6 branches covered.">		return sideA &gt; sideB + sideC || sideB &gt; sideA + sideC || sideC &gt; sideA + sideB;</span>
 	}
 	
@@ -44,7 +44,7 @@
 	 * @return true if any two side's lengths are same.
 	 */
 
-	private boolean checkIsosceles(int sideA, int sideB, int sideC) {
+	private boolean checkIsosceles(double sideA, double sideB, double sideC) {
 <span class="fc bfc" id="L48" title="All 6 branches covered.">		return sideA == sideB || sideB == sideC || sideA == sideC;</span>
 	}
 	
@@ -57,28 +57,28 @@
 	 * @return true if all sides lengths are same.
 	 */
 
-	private boolean checkEquilateral(int sideA, int sideB, int sideC) {
+	private boolean checkEquilateral(double sideA, double sideB, double sideC) {
 <span class="fc bfc" id="L61" title="All 4 branches covered.">		return sideA == sideB &amp;&amp; sideB == sideC;</span>
 	}
 	
 	/**
 	 * This function returns the type of triangle if its valid. Else reason out the problem.
 	 * 
-	 * @param sideA, Integer length of sideA in a triangle
-	 * @param sideB, Integer length of sideB in a triangle
-	 * @param sideC, Integer length of sideC in a triangle
+	 * @param sideA, Double length of sideA in a triangle
+	 * @param sideB, Double length of sideB in a triangle
+	 * @param sideC, Double length of sideC in a triangle
 	 * @return the type of the triangle if the sides passed are valid, else reason out the problem
 	 */
 
-	public String getTriangleType(Integer sideA, Integer sideB, Integer sideC) {
+	public String getTriangleType(Double sideA, Double sideB, Double sideC) {
 		
 <span class="fc bfc" id="L75" title="All 6 branches covered.">		if ((sideA != null &amp;&amp; sideB != null &amp;&amp; sideC != null)</span>
-<span class="fc bfc" id="L76" title="All 2 branches covered.">				&amp;&amp; validLength(sideA.intValue(), sideB.intValue(), sideC.intValue())</span>
-<span class="fc bfc" id="L77" title="All 2 branches covered.">				&amp;&amp; !checkTraingleProperty(sideA.intValue(), sideB.intValue(), sideC.intValue())) {</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">				&amp;&amp; validLength(sideA.doubleValue(), sideB.doubleValue(), sideC.doubleValue())</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">				&amp;&amp; !checkTraingleProperty(sideA.doubleValue(), sideB.doubleValue(), sideC.doubleValue())) {</span>
 			
-<span class="fc bfc" id="L79" title="All 2 branches covered.">			if (checkEquilateral(sideA.intValue(), sideB.intValue(), sideC.intValue())) {</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">			if (checkEquilateral(sideA.doubleValue(), sideB.doubleValue(), sideC.doubleValue())) {</span>
 <span class="fc" id="L80">				return &quot;Its an Equilateral Triangle&quot;;</span>
-<span class="fc bfc" id="L81" title="All 2 branches covered.">			} else if (checkIsosceles(sideA.intValue(), sideB.intValue(), sideC.intValue())) {</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">			} else if (checkIsosceles(sideA.doubleValue(), sideB.doubleValue(), sideC.doubleValue())) {</span>
 <span class="fc" id="L82">				return &quot;Its an Isoceles Triangle&quot;;</span>
 			} else {
 <span class="fc" id="L84">				return &quot;Its a Scalene Triangle&quot;;</span>
@@ -90,4 +90,4 @@
 
 	}
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>codingtest (1) (Jun 18, 2017 6:45:52 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>codingtest (1) (Jun 18, 2017 9:36:21 PM)</div></body></html>
