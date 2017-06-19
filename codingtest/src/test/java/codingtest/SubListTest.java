@@ -40,8 +40,12 @@ public class SubListTest {
 		
 		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>(Arrays.asList(1,2))));
 		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,2,3,5,6,6,7)),new ArrayList<Integer>(Arrays.asList(1,2,2,6,6))));
-	
-	
+		
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<String>(Arrays.asList("Karthik","Ankit","Elias")), new ArrayList<String>(Arrays.asList("Karthik","Elias"))));
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<String>(Arrays.asList("Karthik","Ankit","Ankit")), new ArrayList<String>(Arrays.asList("Karthik","Ankit"))));
+		
+		assertEquals("listTwo is a sublist of listOne", subListCheck.isSubList(new ArrayList<Double>(Arrays.asList(1.0,1.1,1.25)), new ArrayList<Double>(Arrays.asList(1.10,1.00))));
+		
 		assertEquals("listOne element 2 not present in listTwo whose size is >= listOne. Therefore listOne is not a sublist of listTwo"
 , subListCheck.isSubList(new ArrayList<Integer>(Arrays.asList(1,2,3)),new ArrayList<Integer>(Arrays.asList(1,4,5,6))));
 		
