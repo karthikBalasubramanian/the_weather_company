@@ -1,6 +1,6 @@
 # The Weather Company
 
-[![Build Status](https://travis-ci.org/karthikBalasubramanian/the_weather_company.svg?branch=master)](https://travis-ci.org/karthikBalasubramanian/the_weather_company)
+[![Build Status](https://travis-ci.org/karthikBalasubramanian/the_weather_company.svg?branch=master)](https://travis-ci.org/karthikBalasubramanian/the_weather_company) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
 This repository has four folders
 
