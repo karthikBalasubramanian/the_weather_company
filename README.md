@@ -1,5 +1,10 @@
 # The Weather Company
+
+[![Build Status](https://travis-ci.org/karthikBalasubramanian/the_weather_company.svg?branch=master)](https://travis-ci.org/karthikBalasubramanian/the_weather_company)
+
 This repository has four folders
+
+
 
   1. codingtest (Contains the problem sets)
   2. coverage (Results of code coverage as Html files)
