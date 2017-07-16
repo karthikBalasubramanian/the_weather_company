@@ -1,5 +1,8 @@
 package codingtest;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 /**
  * LinkedList.java
  * Purpose: To create a LinkedList of inner class Node and return the 5th element from the end of LinkedList 
@@ -77,6 +80,56 @@ public class LinkedList {
 	}
 	
 	
+	
+	    public static String reverseVowels(String s) {
+	        
+	        char[] finalArray = s.toCharArray();
+	        
+	        int low = 0;
+	        int high = finalArray.length-1;
+	        
+	        while(low<high){
+	            if("aeiou".contains(String.valueOf(finalArray[low])) && "aeiou".contains(String.valueOf(finalArray[high]))){
+	                char temp =  finalArray[low];
+	                finalArray[low] = finalArray[high];
+	                finalArray[high]=temp;
+	                low++;
+	                high--;
+	            }else if("aeiou".contains(String.valueOf(finalArray[low]))){
+	                high--;
+	            }else if("aeiou".contains(String.valueOf(finalArray[high]))){
+	                low++;
+	            }else{
+	                low++;
+	                high--;
+	            }
+	        }
+	        
+	        String m = new String(finalArray);
+	        System.out.println(m);
+	        return m;
+	        
+	    }
+	    
+	    public static int findPairs(int[] nums, int k) {
+	        HashSet<Integer> finalSet = new HashSet<Integer>();
+	        
+	        for(int i=0; i<nums.length; i++){
+	            finalSet.add(nums[i]);
+	        }
+	        HashMap<Integer,Integer> finalMap = new HashMap<Integer,Integer>();
+	        int countPairs =0;
+	        for(int val: finalSet ){
+	        	if(finalMap.containsKey(Math.abs(k-val))){
+	        		countPairs+=1;
+	        	}
+	        	finalMap.put(val, val);
+	        }
+	        return countPairs;
+	    }
+	
+	
+	
 	public class Node {
 
 		int value;
@@ -94,5 +147,5 @@ public class LinkedList {
 		}
 
 	}
-
+	
 }
